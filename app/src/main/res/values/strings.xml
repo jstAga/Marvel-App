@@ -2,4 +2,16 @@
     <string name="app_name">Marvel App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_screen">splash screen</string>
+    <string name="skip">Skip</string>
+    <string name="desc">Welcome to the Marvel Universe</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in_with_google">sign in with google</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_in_with_facebook">sign in with facebook</string>
+    <string name="registration">registration</string>
+
 </resources>

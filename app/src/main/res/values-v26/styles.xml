@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="Auth.Edit.Text" parent="@android:style/Widget.EditText">
+        <item name="android:layout_marginHorizontal">28dp</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textColorHint">@color/gray</item>
+    </style>
+
+    <style name="Auth.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_marginHorizontal">28dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">8dp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="iconTintMode">multiply</item>
+        <item name="iconGravity">textStart</item>
+    </style>
+</resources>
+
+    <!--<item name=""-->
