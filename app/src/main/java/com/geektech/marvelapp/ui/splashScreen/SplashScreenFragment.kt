@@ -1,5 +1,6 @@
 package com.geektech.marvelapp.ui.splashScreen
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -12,6 +13,7 @@ import com.geektech.marvelapp.R
 import com.geektech.marvelapp.databinding.FragmentSplashScreenBinding
 
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreenFragment : Fragment() {
     private lateinit var binding: FragmentSplashScreenBinding
 

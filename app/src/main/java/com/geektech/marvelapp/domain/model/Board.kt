@@ -1,4 +1,4 @@
-package com.geektech.marvelapp.model
+package com.geektech.marvelapp.domain.model
 
 data class Board(
     val desc: String,

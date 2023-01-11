@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_auth"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Auth.TextView.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registration" />
+
+    <EditText
+        android:id="@+id/etMail"
+        style="@style/Auth.Edit.Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/ic_user"
+        android:hint="@string/mail" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        style="@style/Auth.Edit.Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_user"
+        android:hint="@string/password" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReg"
+        style="@style/Auth.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:padding="14dp"
+        android:text="@string/registration" />
+
+</LinearLayout>

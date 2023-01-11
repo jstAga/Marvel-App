@@ -7,22 +7,19 @@
     android:orientation="vertical">
 
     <TextView
+        style="@style/Auth.TextView.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
-        android:text="@string/log_in"
-        android:textColor="@color/white"
-        android:textSize="32sp" />
+        android:text="@string/log_in" />
 
     <EditText
-        android:id="@+id/etLogin"
+        android:id="@+id/etMail"
         style="@style/Auth.Edit.Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:drawableStart="@drawable/ic_user"
-        android:hint="@string/login" />
+        android:hint="@string/mail" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -30,8 +27,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:drawableStart="@drawable/ic_user"
-        android:hint="@string/password" />
+        android:drawableStart="@drawable/ic_password"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/tvForgotPassword"
@@ -71,12 +69,16 @@
         android:text="@string/sign_in_with_facebook"
         app:icon="@drawable/ic_facebook" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegistration"
+        style="@style/Auth.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="28dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/eectangle"
+        android:backgroundTint="@color/btn_reg_bg"
+        android:padding="14dp"
         android:text="@string/registration"
-        android:textColor="@color/white" />
+        app:strokeColor="@color/news_text"
+        app:strokeWidth="1dp" />
+
+
 </LinearLayout>

@@ -13,5 +13,8 @@
     <string name="log_in">Log In</string>
     <string name="sign_in_with_facebook">sign in with facebook</string>
     <string name="registration">registration</string>
+    <string name="more_news">more news</string>
+    <string name="categories">Categories</string>
+    <string name="mail">Mail</string>
 
 </resources>
