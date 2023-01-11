@@ -23,7 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="20dp"
-        app:ci_drawable="@drawable/bg_circle_indicator"
+        app:ci_drawable="@drawable/ci_selected"
+        app:ci_drawable_unselected="@drawable/ci_unselected"
         app:layout_constraintBottom_toBottomOf="@id/rvPoster"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -45,8 +46,8 @@
         app:strokeWidth="1dp" />
 
     <TextView
-        style="@style/Menu.TextView"
         android:id="@+id/tvCategories"
+        style="@style/Menu.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/categories"
@@ -55,10 +56,10 @@
         app:layout_constraintTop_toBottomOf="@id/btnNews" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="12dp"
         android:id="@+id/rvFeed"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="12dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -17,11 +17,11 @@ class BoardingAdapter(val skipBoarding: () -> Unit) :
         ),
         Board(
             "You can read comic books, learn about movies",
-            "https://i.pinimg.com/564x/b4/c4/ab/b4c4ab99761386b5c0b5fbb4dbdef625.jpg"
+            "https://i.pinimg.com/564x/c5/98/c8/c598c856c57cc9e0ff6f685a6082b25d.jpg"
         ),
         Board(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elite",
-            "https://i.pinimg.com/564x/b4/c4/ab/b4c4ab99761386b5c0b5fbb4dbdef625.jpg"
+            "https://i.pinimg.com/564x/7a/6e/29/7a6e296532e4187d50c2f2e9efd11157.jpg"
         ),
     )
 

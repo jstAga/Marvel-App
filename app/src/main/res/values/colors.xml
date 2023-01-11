@@ -13,5 +13,7 @@
     <color name="btn_reg_bg">#1AFFFFFF</color>
     <color name="gray">#99FFFFFF</color>
     <color name="red">#C72828</color>
+    <color name="ci_red">#C72828</color>
+    <color name="ci_red_bg">#33C72828</color>
     <color name="blue">#3B5A98</color>
 </resources>

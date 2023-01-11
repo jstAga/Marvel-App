@@ -15,6 +15,6 @@
     <string name="registration">registration</string>
     <string name="more_news">more news</string>
     <string name="categories">Categories</string>
-    <string name="mail">Mail</string>
+    <string name="email">Email</string>
 
 </resources>
