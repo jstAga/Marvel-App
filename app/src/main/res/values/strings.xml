@@ -16,5 +16,7 @@
     <string name="more_news">more news</string>
     <string name="categories">Categories</string>
     <string name="email">Email</string>
+    <string name="title">Title</string>
+    <string name="the_cast">The Cast</string>
 
 </resources>

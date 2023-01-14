@@ -24,4 +24,9 @@
         android:name="com.geektech.marvelapp.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/filmDetailFragment"
+        android:name="com.geektech.marvelapp.FilmDetailFragment"
+        android:label="fragment_film_detail"
+        tools:layout="@layout/fragment_film_detail" />
 </navigation>
