@@ -1,12 +1,12 @@
 package com.geektech.marvelapp.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.geektech.marvelapp.data.remote.ResultsModel
 import com.geektech.marvelapp.databinding.FragmentHomeBinding
 import com.geektech.marvelapp.ui.home.adapter.FeedAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,7 +20,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -29,6 +29,16 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
         addData()
+
+
+        binding.btnNews.setOnClickListener {
+            viewModel.getCastModel("tt14311386")
+            viewModel.liveActorsId.observe(viewLifecycleOwner) {
+                Log.e("aga", "actors data: ${it}")
+            }
+
+        }
+
     }
 
     private fun initAdapter() {
@@ -38,14 +48,10 @@ class HomeFragment : Fragment() {
 
     private fun addData() {
         viewModel.getFilmModel("spiderman")
-        viewModel.filmData.observe(viewLifecycleOwner){
+        viewModel.liveFilmData.observe(viewLifecycleOwner) {
             feedAdapter.addData(it)
         }
-//        viewModel.getFilmModel("spiderman").observe(viewLifecycleOwner) {
-//            adapter.addData(it.results[0])
-//            dataList.addAll(it.results)
-//
-//        }
     }
 
 }
+

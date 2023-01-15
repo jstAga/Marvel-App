@@ -1,17 +1,22 @@
-package com.geektech.marvelapp.data.remote
+package com.geektech.marvelapp.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 
 data class FilmModel (
-    @SerializedName("results") var results : List<ResultsModel>,
+    @SerializedName("results") var results : ArrayList<ResultsModel>
     )
 
 data class ResultsModel(
-    @SerializedName("id") var id : String,
-    @SerializedName("image") var image : ImageModel,
-    @SerializedName("title") var title : String,
+    @SerializedName("id") var filmID : String? = null,      //film id
+    @SerializedName("image") val image : ImageModel? = null,
+    @SerializedName("title") val title : String? = null,
 )
 
 data class ImageModel(
-    @SerializedName("url") var url : String
+    @SerializedName("url") val url : String
+)
+
+
+data class CastModel(
+    var data: ArrayList<String>
 )
