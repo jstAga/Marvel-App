@@ -1,8 +1,6 @@
 package com.geektech.marvelapp.ui.filmDetail
 
-import androidx.lifecycle.ViewModel
-import com.geektech.marvelapp.domain.repository.Repository
-import javax.inject.Inject
+import com.geektech.youtubeapi.core.ui.BaseViewModel
 
-class FilmDetailViewModel @Inject constructor(repository: Repository) : ViewModel() {
+class FilmDetailViewModel  : BaseViewModel() {
 }

@@ -4,6 +4,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    id 'com.google.secrets_gradle_plugin' version '0.4'
 }
 
 android {
@@ -16,6 +17,11 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
+
+        buildConfigField "String", "MARVEL_API_KEY", "\"3e794e5ed62fd1f9a317dde6718e63da\""
+        buildConfigField "String", "MARVEL_PRIVATE_KEY", "\"e96dba542132bc92b4436e34dd50455ffd3f4b4f\""
+        buildConfigField "String", "BASE_URL_MARVEL", "\"https://gateway.marvel.com\""
+        buildConfigField "String", "BASE_URL", "\"https://www.googleapis.com/youtube/v3/\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

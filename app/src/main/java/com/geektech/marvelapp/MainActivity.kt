@@ -6,6 +6,9 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.geektech.marvelapp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,7 +28,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun hideBottomNavigation() {
         val bottomFragments = listOf(
-            R.id.homeFragment
+            R.id.homeFragment,
+            R.id.comicBookFragment,
+            R.id.shopFragment,
         )
 
         val navView: BottomNavigationView = binding.navView
@@ -36,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             navView.isVisible = bottomFragments.contains(destination.id)
         }
+        navView.setupWithNavController(navController)
     }
 
     private fun hideActionBar() {

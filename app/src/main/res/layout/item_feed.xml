@@ -4,34 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="12dp">
-
+    android:paddingVertical="12dp">
 
     <ImageView
         android:id="@+id/ivBackground"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
         android:scaleType="centerCrop"
-       android:src="@drawable/bg_auth"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/bg_auth"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvTitle"
-        style="@style/Auth.TextView.Title"
+        style="@style/Base.TextView.Title"
+        android:textSize="24sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="100dp"
         android:layout_marginTop="0dp"
-        android:paddingVertical="20dp"
-        android:background="@color/black_bg_title_feed"
-        android:paddingStart="20dp"
         android:text="@string/title"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivBackground"
         tools:ignore="RtlSymmetry" />
 
 

@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        style="@style/Auth.TextView.Title"
+        style="@style/Base.TextView.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/log_in" />

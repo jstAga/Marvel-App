@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
 import com.geektech.marvelapp.databinding.ItemBoardingBinding
-import com.geektech.marvelapp.domain.model.Board
+import com.geektech.marvelapp.data.remote.model.Board
 
 class BoardingAdapter(val skipBoarding: () -> Unit) :
     Adapter<BoardingAdapter.BoardingViewHolder>() {

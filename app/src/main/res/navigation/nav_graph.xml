@@ -9,24 +9,47 @@
         android:name="com.geektech.marvelapp.ui.splashScreen.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" />
+
     <fragment
         android:id="@+id/boardingFragment"
         android:name="com.geektech.marvelapp.ui.boarding.BoardingFragment"
         android:label="fragment_boarding"
         tools:layout="@layout/fragment_boarding" />
+
     <fragment
         android:id="@+id/authFragment"
         android:name="com.geektech.marvelapp.ui.auth.AuthFragment"
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth" />
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.geektech.marvelapp.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+    </fragment>
+
     <fragment
         android:id="@+id/filmDetailFragment"
-        android:name="com.geektech.marvelapp.FilmDetailFragment"
+        android:name="com.geektech.marvelapp.ui.filmDetail.FilmDetailFragment"
         android:label="fragment_film_detail"
         tools:layout="@layout/fragment_film_detail" />
+
+    <fragment
+        android:id="@+id/creditCardFragment"
+        android:name="com.geektech.marvelapp.ui.creditCard.CreditCardFragment"
+        android:label="fragment_credit_card"
+        tools:layout="@layout/fragment_credit_card" />
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.geektech.marvelapp.ui.shop.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" />
+
+    <fragment
+        android:id="@+id/comicBookFragment"
+        android:name="com.geektech.marvelapp.ui.comicBook.ComicBookFragment"
+        android:label="fragment_comic_book"
+        tools:layout="@layout/fragment_comic_book" />
 </navigation>

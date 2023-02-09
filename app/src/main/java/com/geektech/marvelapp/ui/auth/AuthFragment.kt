@@ -12,7 +12,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.geektech.marvelapp.R
 import com.geektech.marvelapp.databinding.FragmentAuthBinding
-import com.geektech.marvelapp.utils.Key
+import com.geektech.marvelapp.utils.Constants
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -21,10 +21,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
 
+@Suppress("DEPRECATION")
 class AuthFragment : Fragment() {
     private lateinit var binding: FragmentAuthBinding
     private lateinit var gso: GoogleSignInOptions
-    private lateinit var gsc: GoogleSignInClient
+    private lateinit var gsc: `GoogleSignInClient`
     private val auth = FirebaseAuth.getInstance()
 
     //hash maps for find exceptions
@@ -125,14 +126,14 @@ class AuthFragment : Fragment() {
 
         binding.inAuth.btnGoogle.setOnClickListener {
             val signInIntent = gsc.signInIntent
-            startActivityForResult(signInIntent, Key.GOOGLE_AUTH_OK)
+            startActivityForResult(signInIntent, Constants.GOOGLE_AUTH_OK)
         }
     }
 
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == Key.GOOGLE_AUTH_OK) {
+        if (requestCode == Constants.GOOGLE_AUTH_OK) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
                 val account = task.getResult(ApiException::class.java)!!

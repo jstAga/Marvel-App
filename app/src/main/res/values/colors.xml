@@ -6,7 +6,6 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="black_bg_title_feed">#33000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="news_text">#99FFFFFF</color>
     <color name="menu_text">#CCFFFFFF</color>
@@ -18,4 +17,5 @@
     <color name="ci_red">#C72828</color>
     <color name="ci_red_bg">#33C72828</color>
     <color name="blue">#3B5A98</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

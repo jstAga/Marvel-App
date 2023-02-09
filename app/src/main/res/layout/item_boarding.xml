@@ -11,10 +11,10 @@
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
         android:scaleType="centerCrop"
         android:src="@color/white"
         app:layout_constraintBottom_toTopOf="@id/tvDesc"
-        android:layout_marginBottom="20dp"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
@@ -31,10 +31,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_weight="9"
-        android:text="@string/desc"
         android:layout_marginHorizontal="20dp"
+        android:layout_weight="9"
+        android:gravity="center"
+        android:text="@string/desc"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@id/btnSkip"
@@ -42,16 +42,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/center" />
 
-    <Button
-        android:background="@drawable/bg_skip"
-        android:textColor="@color/gray"
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSkip"
+        style="@style/Base.Button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="80dp"
         android:layout_marginBottom="40dp"
-        android:layout_weight="9"
         android:text="@string/skip"
         app:layout_constraintBottom_toBottomOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

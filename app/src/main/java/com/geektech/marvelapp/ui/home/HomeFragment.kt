@@ -1,57 +1,45 @@
 package com.geektech.marvelapp.ui.home
 
-import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import android.widget.Toast
+import com.geektech.marvelapp.core.ui.BaseFragment
 import com.geektech.marvelapp.databinding.FragmentHomeBinding
 import com.geektech.marvelapp.ui.home.adapter.FeedAdapter
+import com.geektech.youtubeapi.core.network.result.Status
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
-    private val viewModel: HomeViewModel by viewModels()
-    private lateinit var feedAdapter: FeedAdapter
+class HomeFragment : BaseFragment<FragmentHomeBinding,HomeViewModel >() {
+    override fun getViewModelClass(): Class<HomeViewModel> = HomeViewModel::class.java
+    override fun getViewBinding(): FragmentHomeBinding = FragmentHomeBinding.inflate(layoutInflater)
+    private val feedAdapter by lazy { FeedAdapter() }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initAdapter()
-        addData()
-
-
-        binding.btnNews.setOnClickListener {
-            viewModel.getCastModel("tt14311386")
-            viewModel.liveActorsId.observe(viewLifecycleOwner) {
-                Log.e("aga", "actors data: ${it}")
-            }
-
+        override fun initViews() {
+            super.initViews()
+            binding.rvFeed.adapter = feedAdapter
         }
 
+    override fun initObserver() {
+        super.initObserver()
+        getFilm()
     }
 
-    private fun initAdapter() {
-        feedAdapter = FeedAdapter()
-        binding.rvFeed.adapter = feedAdapter
-    }
-
-    private fun addData() {
-        viewModel.getFilmModel("spiderman")
+    private fun getFilm() {
+        viewModel.getFilm("spiderman")
         viewModel.liveFilmData.observe(viewLifecycleOwner) {
-            feedAdapter.addData(it)
+//            feedAdapter.addData(it)
+            when (it.status){
+                Status.SUCCESS -> {
+                    binding.rvFeed.visibility = View.VISIBLE
+                    binding.pbLoading.visibility = View.GONE
+                    it.data?.let { it1 -> feedAdapter.addData(it1) }
+                }
+                Status.ERROR -> {
+                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                }
+                Status.LOADING -> binding.rvFeed.visibility = View.GONE
+            }
         }
     }
-
 }
 
