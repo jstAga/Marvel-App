@@ -1,9 +1,9 @@
 package com.geektech.marvelapp.ui.home
 
 import androidx.lifecycle.LiveData
-import com.geektech.marvelapp.data.remote.model.FilmModel
+import com.geektech.marvelapp.data.remote.model.imbd.FilmModel
 import com.geektech.marvelapp.ui.home.repostitory.HomeRepository
-import com.geektech.youtubeapi.core.network.result.Resource
+import com.geektech.marvelapp.core.network.result.Resource
 import com.geektech.youtubeapi.core.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

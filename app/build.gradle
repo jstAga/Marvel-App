@@ -21,7 +21,9 @@ android {
         buildConfigField "String", "MARVEL_API_KEY", "\"3e794e5ed62fd1f9a317dde6718e63da\""
         buildConfigField "String", "MARVEL_PRIVATE_KEY", "\"e96dba542132bc92b4436e34dd50455ffd3f4b4f\""
         buildConfigField "String", "BASE_URL_MARVEL", "\"https://gateway.marvel.com\""
-        buildConfigField "String", "BASE_URL", "\"https://www.googleapis.com/youtube/v3/\""
+        buildConfigField "String", "IMDB_API_KEY", "\"000bf1ebb5msh8a7447e0afd8473p199aa9jsn7967e472ee5d\""
+        buildConfigField "String", "IMDB_HOST", "\"imdb8.p.rapidapi.com\""
+        buildConfigField "String", "BASE_URL_IMDB", "\"https://imdb8.p.rapidapi.com/\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -91,4 +93,13 @@ dependencies {
 
     //circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //room
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
 }

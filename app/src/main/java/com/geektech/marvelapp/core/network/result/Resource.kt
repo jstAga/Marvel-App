@@ -1,4 +1,5 @@
-package com.geektech.youtubeapi.core.network.result
+package com.geektech.marvelapp.core.network.result
+import com.geektech.youtubeapi.core.network.result.Status
 
 data class Resource<T>(val status: Status, val data: T?, val message: String?, val code: Int?) {
     companion object {

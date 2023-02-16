@@ -1,46 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_home"
-    android:orientation="vertical">
+    android:background="@drawable/bg_home">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:layout_weight="3"
-        android:src="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/tvCast"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvCast"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="28dp"
-        android:textSize="20sp"
-        android:layout_marginTop="160dp"
-        android:layout_weight="2"
-        android:text="@string/the_cast"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCast"
-        android:visibility="gone"
-        android:layout_width="0dp"
-        tools:listitem="@layout/item_cast"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCast">
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerCrop"
+            android:src="@color/black" />
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="28dp"
+            android:text="@string/title"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvCast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_expanded_text_view"
+            android:paddingVertical="4dp"
+            android:text="@string/the_cast"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:drawableEndCompat="@drawable/ic_arrow_down" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCast"
+            tools:listitem="@layout/item_cast" />
+
+        <TextView
+            android:id="@+id/tvStoryline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_expanded_text_view"
+            android:paddingVertical="4dp"
+            android:text="@string/storyline"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:drawableEndCompat="@drawable/ic_arrow_down" />
+
+        <TextView
+            android:id="@+id/tvExpandedStoryline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginHorizontal="28dp"
+            android:text="@string/lorem"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="28dp"/>
+    </LinearLayout>
+
+</ScrollView>

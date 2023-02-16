@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.geektech.marvelapp.data.remote.model.ActorModel
+import com.geektech.marvelapp.data.remote.model.imbd.ActorModel
 import com.geektech.marvelapp.databinding.ItemCastBinding
 
-class CastAdapter : Adapter<CastAdapter.CastViewHolder>() {
+class CastAdapter() : Adapter<CastAdapter.CastViewHolder>() {
     private val data = arrayListOf<ActorModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CastViewHolder {

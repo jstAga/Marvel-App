@@ -1,17 +1,19 @@
 package com.geektech.marvelapp.ui.home.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
-import com.geektech.marvelapp.data.remote.model.FilmModel
-import com.geektech.marvelapp.data.remote.model.ResultsModel
+import com.geektech.marvelapp.data.remote.model.imbd.FilmModel
+import com.geektech.marvelapp.data.remote.model.imbd.ResultsModel
 import com.geektech.marvelapp.databinding.ItemFeedBinding
 
-class FeedAdapter() : Adapter<FeedAdapter.FeedViewHolder>() {
+class FeedAdapter(private val onClick: (String) -> Unit) : Adapter<FeedAdapter.FeedViewHolder>() {
     private val data = arrayListOf<ResultsModel>()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun addData(newData: FilmModel) {
         data.clear()
         newData.results.let { data.addAll(it) }
@@ -40,6 +42,7 @@ class FeedAdapter() : Adapter<FeedAdapter.FeedViewHolder>() {
                 ivBackground.load(model.image!!.url)
                 tvTitle.text = model.title
             }
+            itemView.setOnClickListener { onClick(model.filmID.toString()) }
         }
     }
 }

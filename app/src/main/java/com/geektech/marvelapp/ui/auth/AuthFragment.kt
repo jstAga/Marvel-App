@@ -25,7 +25,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 class AuthFragment : Fragment() {
     private lateinit var binding: FragmentAuthBinding
     private lateinit var gso: GoogleSignInOptions
-    private lateinit var gsc: `GoogleSignInClient`
+    private lateinit var gsc: GoogleSignInClient
     private val auth = FirebaseAuth.getInstance()
 
     //hash maps for find exceptions

@@ -1,20 +1,21 @@
 package com.geektech.marvelapp.ui.home.repostitory
 
 import androidx.lifecycle.MutableLiveData
-import com.geektech.marvelapp.data.remote.ImbdApi
-import com.geektech.marvelapp.data.remote.model.FilmModel
-import com.geektech.marvelapp.data.remote.model.ResultsModel
-import com.geektech.youtubeapi.core.network.result.Resource
+import com.geektech.marvelapp.data.remote.ImdbApi
+import com.geektech.marvelapp.data.remote.model.imbd.FilmModel
+import com.geektech.marvelapp.data.remote.model.imbd.ResultsModel
+import com.geektech.marvelapp.core.network.result.Resource
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor(private val imbdpApi: ImbdApi) {
+class HomeRepository @Inject constructor(private val imbdpApi: ImdbApi) {
 
     fun getFilm(title: String): MutableLiveData<Resource<FilmModel>> {
         val data = MutableLiveData<Resource<FilmModel>>()
-        imbdpApi.findFilmModel(title).enqueue(object : Callback<FilmModel> {
+        data.value = Resource.loading()
+        imbdpApi.getFilm(title).enqueue(object : Callback<FilmModel> {
             override fun onResponse(call: Call<FilmModel>, response: Response<FilmModel>) {
                 if (response.isSuccessful) {
                     data.value = Resource.success(response.body()?.let { filmModelSort(it) })
@@ -44,5 +45,4 @@ class HomeRepository @Inject constructor(private val imbdpApi: ImbdApi) {
     private fun cutId(newId: String): String {
         return newId.removePrefix("/title/").removeSuffix("/")
     }
-
 }
